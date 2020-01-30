@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Block-ok a láncon</h1>
+	<p>Minden kártya egy block-ot reprezentál a láncból.Kattints a kártyára, ha látni szeretnék a benne lévő tranzakciókat</p>
+</div>
+
+<div class="container" style="overflow-x: scroll;white-space: nowrap;">
+	<app-block-view 
+		*ngFor="let block of blocks" 
+		[block]="block" 
+		[selectedBlock]="selectedBlock"
+		(click)="showTransactions(block)"
+	></app-block-view>
+</div>
+
+<br><br>
+
+<div class="container">
+	<h1>Block-ban lévő tranzakciók {{ getBlockNumber(selectedBlock) }}</h1>
+
+	<app-transactions-table
+		[transactions]="selectedBlock.transactions"
+	></app-transactions-table>
+</div>
+

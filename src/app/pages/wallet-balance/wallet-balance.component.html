@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Wallet részletei</h1>
+
+	<p style="word-wrap:break-word;">
+		<strong>Cím:</strong>
+		<br>
+		{{walletAddress}}
+	</p>
+
+	<p>
+		<strong>Egyenleg:</strong>
+		<br>
+		{{ balance }}
+	</p>
+
+	<hr>
+
+	<h1>Transactions</h1>
+	<p *ngIf="transactions.length === 0">Ez a wallet nem rendelkezék tranzakciókkal (még)</p>
+	<app-transactions-table
+		[transactions]="transactions"
+		*ngIf="transactions.length > 0"
+	></app-transactions-table>
+</div>

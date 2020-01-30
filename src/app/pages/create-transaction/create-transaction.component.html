@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>Tranzakció létrehozás</h1>
+	<p>Utalj valakinek!</p>
+
+	<br>
+
+	<div class="form-group">
+	    <label for="fromAddress">Kitől</label>
+	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
+	    <small id="fromAddressHelp" class="form-text text-muted">
+	    	Ez a te wallet címed.Ezt nem tudod megváltoztatni, mivel csak a te coin-jaidat tudod elkölteni.
+	    </small>
+  	</div>
+
+  	<div class="form-group">
+	    <label for="toAddress">Kinek</label>
+	    <input type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" [(ngModel)]="newTx.toAddress">
+	    <small id="toAddressHelp" class="form-text text-muted">
+	    	A címzet wallet címe.
+	    </small>
+  	</div>
+
+  	<div class="form-group">
+	    <label for="amount">Mennyiség</label>
+	    <input type="number" class="form-control" id="amount" aria-describedby="amountHelp" [(ngModel)]="newTx.amount">
+	    <small id="amountHelp" class="form-text text-muted">
+	    	Bármekkora összeget utalhatsz. 
+	    </small>
+  	</div>
+
+  	<button (click)="createTransaction()" type="submit" class="btn btn-primary">Tranzakció létrehozása</button>
+
+</div>

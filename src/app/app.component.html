@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    <img src="assets/img/Casino_And_Gambling_Joker_face-512.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    &nbsp;JesterCoin
+  </a>
+
+  <div>
+    <button routerLink="/new/transaction/pending" class="btn btn-outline-light" *ngIf="thereArePendingTransactions()">
+      Bányászatra váró tranzakciók
+      <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
+    </button>
+    &nbsp;
+    <button routerLink="/settings" class="btn btn-outline-light">
+      Beállítások
+    </button>
+    &nbsp;
+    <button routerLink="/new/transaction" class="btn btn-outline-light">
+      Tranzakció létrehozás
+    </button>
+  </div>
+</nav>
+
+<br>
+
+
+
+<router-outlet></router-outlet>
+
+

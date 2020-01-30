@@ -1,0 +1,21 @@
+<div class="container">
+
+	<div class="alert alert-success" role="alert" *ngIf="justAddedTx">
+		Sikeresen létrejött a tranzakció.
+	</div>
+
+	<h1>Feldolgozás alatt lévő tranzakciók</h1>
+	<p>Ezek az utalások a bányászatra várnak.</p>
+
+	<app-transactions-table
+		[transactions]="pendingTransactions">
+	</app-transactions-table>
+
+	 <button class="btn btn-primary" *ngIf="pendingTransactions.length > 0 && miningInProgress === false" (click)="minePendingTransactions()">
+     	Bányászat megkezdése
+    </button>
+
+    <div *ngIf="miningInProgress === true">
+    	Bányászat..
+    </div>
+</div>

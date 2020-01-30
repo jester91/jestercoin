@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Beállítások</h1>
+  <p>Itt tudod beállítani blockchain nehézségét és jutalmát. Változtatás automatikusan mentődik</p>
+
+  <br>
+
+  <div class="form-group">
+    <label for="difficulty">Nehézség</label>
+    <input type="number" class="form-control" id="difficulty" aria-describedby="difficultyHelp" [(ngModel)]="blockchain.difficulty">
+    <small id="difficultyHelp" class="form-text text-muted">
+    	A nehezség azt mutatja meg, hogy milyen hosszú ideig tart a bányászat.Magasabb nehézségi fok lassítja a bányászatot.
+    	<br>Alap: 2
+    </small>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <label for="miningReward">Bányászat után járó jutalom</label>
+    <input type="number" class="form-control" id="miningReward" aria-describedby="miningRewardHelp" [(ngModel)]="blockchain.miningReward">
+    <small id="miningRewardHelp" class="form-text text-muted">
+		Mennyi JesterCoin-t kap a bányász sikeres feldolgozás után.
+		<br>Alap: 100
+    </small>
+  </div>
+
+</div>
